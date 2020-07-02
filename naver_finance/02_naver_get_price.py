@@ -10,4 +10,4 @@ def get_bs_obj():
 bs_obj = get_bs_obj()
 no_today = bs_obj.find("p",{"class":"no_today"})
 blind_now = no_today.find("span",{"class":"blind"})
-print(no_today)
+print(blind_now.text)
