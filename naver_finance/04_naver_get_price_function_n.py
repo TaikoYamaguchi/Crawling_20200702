@@ -9,11 +9,12 @@ def get_bs_obj(company_code):
     return bs_obj
 
 #가격 가져오기
-def get_price(bs_obj):
+def get_price(company_code):
+    bs_obj = get_bs_obj(company_code)
     no_today = bs_obj.find("p", {"class": "no_today"})
     blind_now = no_today.find("span", {"class": "blind"})
     return blind_now.text
 
-bs_obj = get_bs_obj("005930")
-price = get_price(bs_obj)
-print(price)
+company_codes=["005930","000660"]
+for item in company_codes:
+    print(get_price(item))
