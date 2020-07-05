@@ -23,4 +23,6 @@ def get_bs_obj():
 
 
 final_data = pd.DataFrame(get_bs_obj())
+print(final_data)
 final_data.info()
+final_data.to_excel('sector_data.xlsx')
